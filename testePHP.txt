@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Página</title>
+    <script src="./js/custom.js"></script>
+</head>
+<body>
+    <script>
+        var arrayNaPagina = obterMeuArray();
+        console.log(arrayNaPagina); // Isso irá imprimir o conteúdo do array no console do navegador.
+    </script>
+</body>
+</html>
