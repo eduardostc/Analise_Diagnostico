@@ -1,11 +1,11 @@
  <?php
-//header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json; charset=utf-8');
 
 //conexão bd
 include_once "conexao.php";
 
         //query para recuperar registro do bd
-        $query_sits = "SELECT id, email FROM tb_diagnostico ORDER BY nome_da_empresa ASC";
+        $query_sits = "SELECT id, nome_da_empresa, email FROM tb_diagnostico ORDER BY nome_da_empresa ASC";
         // $query_sits = "SELECT id, nome  FROM tb_login WHERE id = 100 ORDER BY nome ASC";
         $result_sits = $conn->prepare($query_sits);
         $result_sits->execute();
@@ -15,7 +15,7 @@ include_once "conexao.php";
                 extract($row_sit);
                 $dados[]= [
                     'id'=> $id, 
-                    
+                    'nome_da_empresa'=>utf8_decode($nome_da_empresa),
                     'email' =>$email
                 ];
             }

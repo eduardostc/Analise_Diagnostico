@@ -58,7 +58,7 @@
                         <select
                           class="form-select"
                           name="id"
-                          id="situacao_id"
+                          id="id"
                         >
                         <!--  <option value="resposta.dados[i]['email']" style="font-weight: bold;">Selecione a Empresa</option>    -->                                         
                         <option value="" style="font-weight: bold;">Selecione a Empresa</option>

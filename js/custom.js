@@ -1,4 +1,4 @@
-const situacao = document.getElementById("situacao_id");
+const situacao = document.getElementById("id");
 
 if(situacao){
     listarSituacao();
@@ -16,7 +16,7 @@ async function listarSituacao(){
             //console.log(resposta.dados[i]['id']);
             //console.log(resposta.dados[i]['email']);
            // situacao.innerHTML = situacao.innerHTML + '<option value="' + resposta.dados[i]['id'] + '">' + resposta.dados[i]['email'] + '</option>'
-            opcao += '<option value="' + resposta.dados[i]['id'] + '">' + resposta.dados[i]['email'] + '</option>';
+            opcao += '<option value="' + resposta.dados[i]['id'] + '">' + resposta.dados[i]['nome_da_empresa'] + '</option>';
         }
         situacao.innerHTML = opcao;
     }else{
