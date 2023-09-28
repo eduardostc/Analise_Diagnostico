@@ -1,5 +1,5 @@
  <?php
-header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: text/html; charset=utf-8');
 
 //conexão bd
 include_once "conexao.php";
@@ -15,8 +15,8 @@ include_once "conexao.php";
                 extract($row_sit);
                 $dados[]= [
                     'id'=> $id, 
-                    'nome_da_empresa'=>utf8_decode($nome_da_empresa),
-                    'atividade_da_empresa'=>utf8_decode($atividade_da_empresa)
+                    'nome_da_empresa'=>utf8_encode($nome_da_empresa),
+                    'atividade_da_empresa'=>utf8_encode($atividade_da_empresa)
                 ];
             }
             $retorna = ['status' => true, 'dados' => $dados];           
@@ -24,7 +24,5 @@ include_once "conexao.php";
             $retorna = ['status' => false, 'msg' => "<p style='color: #f00'> Erro: Nenhuma situação Encontrada</p>"];
         }
 
-//echo json_encode($retorna);
 die(json_encode($retorna));
 
-  //  $nome_da_empresa = utf8_decode($row_sit["nome_da_empresa"]);
