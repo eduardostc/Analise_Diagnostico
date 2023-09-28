@@ -5,7 +5,7 @@ header('Content-Type: application/json; charset=utf-8');
 include_once "conexao.php";
 
         //query para recuperar registro do bd
-        $query_sits = "SELECT id, nome_da_empresa, email FROM tb_diagnostico ORDER BY nome_da_empresa ASC";
+        $query_sits = "SELECT id, nome_da_empresa, atividade_da_empresa FROM tb_diagnostico ORDER BY nome_da_empresa ASC";
         // $query_sits = "SELECT id, nome  FROM tb_login WHERE id = 100 ORDER BY nome ASC";
         $result_sits = $conn->prepare($query_sits);
         $result_sits->execute();
@@ -16,7 +16,7 @@ include_once "conexao.php";
                 $dados[]= [
                     'id'=> $id, 
                     'nome_da_empresa'=>utf8_decode($nome_da_empresa),
-                    'email' =>$email
+                    'atividade_da_empresa'=>utf8_decode($atividade_da_empresa)
                 ];
             }
             $retorna = ['status' => true, 'dados' => $dados];           

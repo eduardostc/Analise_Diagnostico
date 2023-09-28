@@ -12,7 +12,10 @@ async function listarSituacao(){
          for(var i = 0; i < resposta.dados.length; i++){         
           empresa += '<option value="'
           + resposta.dados[i]['id'] 
-          + '" onclick="getEmpresa(' + "'" + resposta.dados[i]['nome_da_empresa'] + "'" + ',' + resposta.dados[i]['id'] + ',' + "'" + resposta.dados[i]['email'] + "'" + ')">' 
+          + '" onclick="getEmpresa(' + "'" +
+          resposta.dados[i]['nome_da_empresa'] + "'" + ',' + 
+          resposta.dados[i]['id'] + ',' + "'" + 
+          resposta.dados[i]['atividade_da_empresa'] + "'" + ')">' 
           
           //A couna abaixo mostra as empresas no formulário
           + resposta.dados[i]['nome_da_empresa']
@@ -23,8 +26,8 @@ async function listarSituacao(){
         document.getElementById("msgAlertaID").innerHTML = resposta ['msg'];
     }
 }
-function getEmpresa(nome_empresa, id, email){
+function getEmpresa(nome_empresa, id, atividade_da_empresa){
     document.getElementById("form_empresa").value = nome_empresa;
     document.getElementById("id").value = id;
-    document.getElementById("form_email").value = email;
+    document.getElementById("form_atividade_da_empresa").value = atividade_da_empresa;
 }

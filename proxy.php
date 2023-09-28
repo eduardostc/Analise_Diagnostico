@@ -1,13 +1,13 @@
 <?php
 $form_empresa = $_POST["form_empresa"] ?? ""; 
 $id = $_POST["id"] ?? "";
-$form_email = $_POST["form_email"] ?? "";
+$form_atividade_da_empresa = $_POST["form_atividade_da_empresa"] ?? "";
 $prompt = $_POST["prompt"] ?? "";
 
 function enviar_dados(
     $form_empresa, 
     $id, 
-    $form_email, 
+    $form_atividade_da_empresa, 
     $prompt) {
     $response = null;
     try {
@@ -24,7 +24,7 @@ function enviar_dados(
             CURLOPT_POSTFIELDS => [
                 "form_empresa" => $form_empresa,//AMBIENTE
                 "id" => $id,                
-                "form_email" => $form_email,
+                "form_atividade_da_empresa" => $form_atividade_da_empresa,
                 "prompt" => $prompt
             ],
         ));
@@ -42,12 +42,12 @@ $result = ["result" => null];
 if (
     $form_empresa !== "" OR
     $id !== "" OR 
-    $form_email !== "" OR
+    $form_atividade_da_empresa !== "" OR
     $prompt !== "") {
     $result = enviar_dados(
         $form_empresa,  
         $id, 
-        $form_email, 
+        $form_atividade_da_empresa, 
         $prompt);
 }
 

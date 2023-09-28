@@ -79,7 +79,7 @@
                           maxlength="100"
                         /> --->
                         <input type="hidden" name="form_empresa" id="form_empresa" />
-                        <input type="hidden" name="form_email" id="form_email" />
+                        <input type="hidden" name="form_atividade_da_empresa" id="form_atividade_da_empresa" />
                      
                   </div>
                 </div>
@@ -131,7 +131,7 @@
       window.addEventListener('load', function () {
         const form_empresa = document.querySelector('#form_empresa');
         const id = document.querySelector('#id');
-        const form_email = document.querySelector('#form_email');
+        const form_atividade_da_empresa = document.querySelector('#form_atividade_da_empresa');
         const prompt = document.querySelector('#prompt'); 
         const resultado = document.querySelector('#resultado');
         const btn_enviar = document.querySelector('#btn_enviar');
@@ -140,7 +140,7 @@
           enviar_dados(
             form_empresa.value, 
             id.value, 
-            form_email.value, 
+            form_atividade_da_empresa.value, 
             prompt.value
           );
           btn_enviar.setAttribute('disabled', 'true');
@@ -149,7 +149,7 @@
         async function enviar_dados(
           form_empresa,
           id,
-          form_email,
+          form_atividade_da_empresa,
           prompt
         ) {
           window.setTimeout(function () {
@@ -158,7 +158,7 @@
           var formdata = new FormData();
           formdata.append("form_empresa", form_empresa); //AMBIENTE
           formdata.append("id", id);
-          formdata.append("form_email", form_email); 
+          formdata.append("form_atividade_da_empresa", form_atividade_da_empresa); 
           formdata.append("prompt", prompt);
           var requestOptions = {
               method: 'POST',
