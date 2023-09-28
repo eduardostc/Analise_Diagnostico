@@ -79,12 +79,8 @@
                           maxlength="100"
                         /> --->
                         <input type="hidden" name="form_empresa" id="form_empresa" />
-                       <!-- <script src="./js/custom.js"></script>
-                        <script>
-                            var arrayNaPagina = obterMeuArray(); // Suponha que este é o valor que você quer atribuir
-                            // Atribua o valor ao campo oculto
-                            document.getElementById('form_empresa').value = arrayNaPagina;
-                        </script>-->
+                        <input type="hidden" name="form_email" id="form_email" />
+                     
                   </div>
                 </div>
 <!--PROMPT------------------------------------------------------------------>
@@ -135,6 +131,7 @@
       window.addEventListener('load', function () {
         const form_empresa = document.querySelector('#form_empresa');
         const id = document.querySelector('#id');
+        const form_email = document.querySelector('#form_email');
         const prompt = document.querySelector('#prompt'); 
         const resultado = document.querySelector('#resultado');
         const btn_enviar = document.querySelector('#btn_enviar');
@@ -143,6 +140,7 @@
           enviar_dados(
             form_empresa.value, 
             id.value, 
+            form_email.value, 
             prompt.value
           );
           btn_enviar.setAttribute('disabled', 'true');
@@ -151,6 +149,7 @@
         async function enviar_dados(
           form_empresa,
           id,
+          form_email,
           prompt
         ) {
           window.setTimeout(function () {
@@ -159,6 +158,7 @@
           var formdata = new FormData();
           formdata.append("form_empresa", form_empresa); //AMBIENTE
           formdata.append("id", id);
+          formdata.append("form_email", form_email); 
           formdata.append("prompt", prompt);
           var requestOptions = {
               method: 'POST',
