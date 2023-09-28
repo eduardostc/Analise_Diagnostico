@@ -79,6 +79,12 @@
                           maxlength="100"
                         /> --->
                         <input type="hidden" name="form_empresa" id="form_empresa" />
+                       <!-- <script src="./js/custom.js"></script>
+                        <script>
+                            var arrayNaPagina = obterMeuArray(); // Suponha que este é o valor que você quer atribuir
+                            // Atribua o valor ao campo oculto
+                            document.getElementById('form_empresa').value = arrayNaPagina;
+                        </script>-->
                   </div>
                 </div>
 <!--PROMPT------------------------------------------------------------------>
