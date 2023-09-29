@@ -95,8 +95,35 @@
                     id="prompt"
                   >
                     <option value="" style="font-weight: bold;">Escolha uma das opção abaixo:</option>
-                    <option value="Faça uma analise descritivo sintetizando com de limite de output de 1000 caracteres">Resumo descritivo sintetizando cada campo:</option>
-                    <option value="Faça um resumo das palavras chaves mencionada em cada input, de modo que explique utilizando no máximo 1000 caracteres.">Resumo das palavras chaves mencionada em cada campo:</option>                                                   
+                    <option value="Vamos analisar a validade dos dados fornecidos e verificar se estão consistentes, com de limite de output de 1000 caracteres">Validação dos Dados da Empresa:</option>
+                    <!--
+                    - Dados da empresa recebidos:
+                    - Nome da empresa: "{nome_da_empresa}"
+                    - CNPJ: "{cnpj_da_empresa}"
+                    - Telefone para contato: "{telefone_da_empresa}"
+                    - Email da empresa: "{email}"
+                    - Endereço completo: "{endereco_da_empresa}"
+                    -->
+                    <option value="Vamos analisar a situação financeira da empresa e fornecer indicadores relevantes para a tomada de decisão, de modo que explique utilizando no máximo 1000 caracteres.">Análise Financeira:</option>                                                   
+                    <!--
+                    - Dados financeiros da empresa recebidos:
+                    - Faturamento anual: "{faturamento_anual_da_empresa}"
+                    - Principais meses de MAIOR faturamento: "{maiores_meses_faturamento}"
+                    - Principais meses de MENOR faturamento: "{menores_meses_faturamento}"
+                    - Percentual de vendas pela internet: "{percentual_vendas_pela_internet}"
+                    -->                    
+                  <option value="Vamos analisar a presença digital da empresa e fornecer indicadores para otimização da estratégia digital, de modo que explique utilizando no máximo 1000 caracteres.">Presença Digital e Marketing:</option>                                            
+                    <!--
+                    - Principais ferramentas e redes sociais utilizadas: "{ferramentas_e_redes_sociais}"
+                    - Nível de maturidade em plataformas digitais: "{maturidade_empresa_uso_plataformas}"
+                    - Conhecimento sobre transformação digital e marketing digital: "{nivel_conhecimento_digital}"
+                    - Utilização de site próprio: "{possui_site_proprio}"
+                    - Terceirização de serviços de marketing digital: "{terceiriza_servicos_digital}"
+                    --> 
+                    <option value="Vamos entender os principais desafios enfrentados e propor soluções para melhorar a eficiência digital, de modo que explique utilizando no máximo 1000 caracteres.">Desafios e Dificuldades:</option>
+                    <!--
+                    - Principal desafio para utilizar plataformas de mídias digitais e ferramentas de gestão: "{principal_desafio_digitais}"
+                    --> 
                   </select>
                 </div>
 
