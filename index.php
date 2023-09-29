@@ -79,8 +79,6 @@
                           maxlength="100"
                         /> --->
                         <input type="hidden" name="NomeDaEmpresa" id="NomeDaEmpresa" />
-                        <input type="hidden" name="QualAtividadeDaEmpresa" id="QualAtividadeDaEmpresa" />
-                        <input type="hidden" name="FaturamentoAnualDaEmpresa" id="FaturamentoAnualDaEmpresa" />
                   </div>
                 </div>
 <!--PROMPT------------------------------------------------------------------>
@@ -130,8 +128,6 @@
       window.addEventListener('load', function () {
         const form_empresa = document.querySelector('#NomeDaEmpresa'); //-------------->1 
         const id = document.querySelector('#id');
-        const QualAtividadeDaEmpresa = document.querySelector('#QualAtividadeDaEmpresa');
-        const FaturamentoAnualDaEmpresa = document.querySelector('#FaturamentoAnualDaEmpresa');
         const prompt = document.querySelector('#prompt'); 
         const resultado = document.querySelector('#resultado');
         const btn_enviar = document.querySelector('#btn_enviar');
@@ -140,8 +136,6 @@
           enviar_dados(
             NomeDaEmpresa.value,  //-------------->2 
             id.value, 
-            QualAtividadeDaEmpresa.value, 
-            FaturamentoAnualDaEmpresa.value, 
             prompt.value
           );
           btn_enviar.setAttribute('disabled', 'true');
@@ -150,8 +144,6 @@
         async function enviar_dados(
           NomeDaEmpresa, //-------------->3 
           id,
-          QualAtividadeDaEmpresa,
-          FaturamentoAnualDaEmpresa,
           prompt
         ) {
           window.setTimeout(function () {
@@ -160,8 +152,6 @@
           var formdata = new FormData();
           formdata.append("NomeDaEmpresa", NomeDaEmpresa); //-------------->4
           formdata.append("id", id);
-          formdata.append("QualAtividadeDaEmpresa", QualAtividadeDaEmpresa); 
-          formdata.append("FaturamentoAnualDaEmpresa", FaturamentoAnualDaEmpresa); 
           formdata.append("prompt", prompt);
           var requestOptions = {
               method: 'POST',

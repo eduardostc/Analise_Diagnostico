@@ -14,9 +14,7 @@ async function listarSituacao(){
           + resposta.dados[i]['id'] 
           + '" onclick="getEmpresa(' + "'" +
           resposta.dados[i]['nome_da_empresa'] + "'" + ',' + "'" +
-          resposta.dados[i]['id'] + "'" + ',' + "'" +
-          resposta.dados[i]['atividade_da_empresa'] + "'" + ',' + "'" +
-          resposta.dados[i]['faturamento_anual_da_empresa'] + "'" + 
+          resposta.dados[i]['id'] + "'" + 
           ')">' 
 
           //A coluna abaixo mostra as empresas no formulário
@@ -28,9 +26,7 @@ async function listarSituacao(){
         document.getElementById("msgAlertaID").innerHTML = resposta ['msg'];
     }
 }
-function getEmpresa(nome_empresa, id, atividade_da_empresa, faturamento_anual_da_empresa){
+function getEmpresa(nome_empresa, id){
     document.getElementById("NomeDaEmpresa").value = nome_empresa;
     document.getElementById("id").value = id;
-    document.getElementById("QualAtividadeDaEmpresa").value = atividade_da_empresa;
-    document.getElementById("FaturamentoAnualDaEmpresa").value = faturamento_anual_da_empresa;
 }
