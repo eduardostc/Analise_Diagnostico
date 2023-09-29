@@ -1,13 +1,15 @@
 <?php
-$form_empresa = $_POST["form_empresa"] ?? ""; 
+$NomeDaEmpresa = $_POST["NomeDaEmpresa"] ?? ""; //-------------->1 
 $id = $_POST["id"] ?? "";
-$form_atividade_da_empresa = $_POST["form_atividade_da_empresa"] ?? "";
+$QualAtividadeDaEmpresa = $_POST["QualAtividadeDaEmpresa"] ?? "";
+$FaturamentoAnualDaEmpresa = $_POST["FaturamentoAnualDaEmpresa"] ?? "";
 $prompt = $_POST["prompt"] ?? "";
 
 function enviar_dados(
-    $form_empresa, 
+    $NomeDaEmpresa,  //-------------->2 
     $id, 
-    $form_atividade_da_empresa, 
+    $QualAtividadeDaEmpresa, 
+    $FaturamentoAnualDaEmpresa, 
     $prompt) {
     $response = null;
     try {
@@ -22,9 +24,10 @@ function enviar_dados(
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => [
-                "form_empresa" => $form_empresa,//AMBIENTE
+                "NomeDaEmpresa" => $NomeDaEmpresa, //-------------->3
                 "id" => $id,                
-                "form_atividade_da_empresa" => $form_atividade_da_empresa,
+                "QualAtividadeDaEmpresa" => $QualAtividadeDaEmpresa,
+                "FaturamentoAnualDaEmpresa" => $FaturamentoAnualDaEmpresa,
                 "prompt" => $prompt
             ],
         ));
@@ -40,14 +43,16 @@ function enviar_dados(
 $result = ["result" => null];
 
 if (
-    $form_empresa !== "" OR
+    $NomeDaEmpresa !== "" OR //-------------->4
     $id !== "" OR 
-    $form_atividade_da_empresa !== "" OR
+    $QualAtividadeDaEmpresa !== "" OR
+    $FaturamentoAnualDaEmpresa !== "" OR
     $prompt !== "") {
     $result = enviar_dados(
-        $form_empresa,  
+        $NomeDaEmpresa,  //-------------->5
         $id, 
-        $form_atividade_da_empresa, 
+        $QualAtividadeDaEmpresa, 
+        $FaturamentoAnualDaEmpresa, 
         $prompt);
 }
 

@@ -78,9 +78,9 @@
                           id="form_empresa"
                           maxlength="100"
                         /> --->
-                        <input type="hidden" name="form_empresa" id="form_empresa" />
-                        <input type="hidden" name="form_atividade_da_empresa" id="form_atividade_da_empresa" />
-                     
+                        <input type="hidden" name="NomeDaEmpresa" id="NomeDaEmpresa" />
+                        <input type="hidden" name="QualAtividadeDaEmpresa" id="QualAtividadeDaEmpresa" />
+                        <input type="hidden" name="FaturamentoAnualDaEmpresa" id="FaturamentoAnualDaEmpresa" />
                   </div>
                 </div>
 <!--PROMPT------------------------------------------------------------------>
@@ -98,8 +98,7 @@
                   >
                     <option value="" style="font-weight: bold;">Escolha uma das opção abaixo:</option>
                     <option value="Faça uma analise descritivo sintetizando com de limite de output de 1000 caracteres">Resumo descritivo sintetizando cada campo:</option>
-                    <option value="Faça um resumo das palavras chaves mencionada em cada input, de modo que explique utilizando no máximo 1000 caracteres.">Resumo das palavras chaves mencionada em cada campo:</option>                    
-                                                            
+                    <option value="Faça um resumo das palavras chaves mencionada em cada input, de modo que explique utilizando no máximo 1000 caracteres.">Resumo das palavras chaves mencionada em cada campo:</option>                                                   
                   </select>
                 </div>
 
@@ -129,36 +128,40 @@
     </div>
     <script>
       window.addEventListener('load', function () {
-        const form_empresa = document.querySelector('#form_empresa');
+        const form_empresa = document.querySelector('#NomeDaEmpresa'); //-------------->1 
         const id = document.querySelector('#id');
-        const form_atividade_da_empresa = document.querySelector('#form_atividade_da_empresa');
+        const QualAtividadeDaEmpresa = document.querySelector('#QualAtividadeDaEmpresa');
+        const FaturamentoAnualDaEmpresa = document.querySelector('#FaturamentoAnualDaEmpresa');
         const prompt = document.querySelector('#prompt'); 
         const resultado = document.querySelector('#resultado');
         const btn_enviar = document.querySelector('#btn_enviar');
         
         btn_enviar.addEventListener('click', function () {
           enviar_dados(
-            form_empresa.value, 
+            NomeDaEmpresa.value,  //-------------->2 
             id.value, 
-            form_atividade_da_empresa.value, 
+            QualAtividadeDaEmpresa.value, 
+            FaturamentoAnualDaEmpresa.value, 
             prompt.value
           );
           btn_enviar.setAttribute('disabled', 'true');
         });
         
         async function enviar_dados(
-          form_empresa,
+          NomeDaEmpresa, //-------------->3 
           id,
-          form_atividade_da_empresa,
+          QualAtividadeDaEmpresa,
+          FaturamentoAnualDaEmpresa,
           prompt
         ) {
           window.setTimeout(function () {
             btn_enviar.removeAttribute('disabled');
           }, 15000);
           var formdata = new FormData();
-          formdata.append("form_empresa", form_empresa); //AMBIENTE
+          formdata.append("NomeDaEmpresa", NomeDaEmpresa); //-------------->4
           formdata.append("id", id);
-          formdata.append("form_atividade_da_empresa", form_atividade_da_empresa); 
+          formdata.append("QualAtividadeDaEmpresa", QualAtividadeDaEmpresa); 
+          formdata.append("FaturamentoAnualDaEmpresa", FaturamentoAnualDaEmpresa); 
           formdata.append("prompt", prompt);
           var requestOptions = {
               method: 'POST',

@@ -13,11 +13,13 @@ async function listarSituacao(){
           empresa += '<option value="'
           + resposta.dados[i]['id'] 
           + '" onclick="getEmpresa(' + "'" +
-          resposta.dados[i]['nome_da_empresa'] + "'" + ',' + 
-          resposta.dados[i]['id'] + ',' + "'" + 
-          resposta.dados[i]['atividade_da_empresa'] + "'" + ')">' 
-          
-          //A couna abaixo mostra as empresas no formulário
+          resposta.dados[i]['nome_da_empresa'] + "'" + ',' + "'" +
+          resposta.dados[i]['id'] + "'" + ',' + "'" +
+          resposta.dados[i]['atividade_da_empresa'] + "'" + ',' + "'" +
+          resposta.dados[i]['faturamento_anual_da_empresa'] + "'" + 
+          ')">' 
+
+          //A coluna abaixo mostra as empresas no formulário
           + resposta.dados[i]['nome_da_empresa']
           + '</option>';
         }
@@ -26,8 +28,9 @@ async function listarSituacao(){
         document.getElementById("msgAlertaID").innerHTML = resposta ['msg'];
     }
 }
-function getEmpresa(nome_empresa, id, atividade_da_empresa){
-    document.getElementById("form_empresa").value = nome_empresa;
+function getEmpresa(nome_empresa, id, atividade_da_empresa, faturamento_anual_da_empresa){
+    document.getElementById("NomeDaEmpresa").value = nome_empresa;
     document.getElementById("id").value = id;
-    document.getElementById("form_atividade_da_empresa").value = atividade_da_empresa;
+    document.getElementById("QualAtividadeDaEmpresa").value = atividade_da_empresa;
+    document.getElementById("FaturamentoAnualDaEmpresa").value = faturamento_anual_da_empresa;
 }
