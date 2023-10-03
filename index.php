@@ -95,7 +95,7 @@
                     id="prompt"
                   >
                     <option value="" style="font-weight: bold;">Escolha uma das opção abaixo:</option>
-                    <option value="Vamos analisar a validade dos dados fornecidos e verificar se estão consistentes, com de limite de output de 1000 caracteres">Validação dos Dados da Empresa:</option>
+                    <option value="Vamos analisar a validade dos dados fornecidos e verificar se estão consistentes, com de limite de output de 1000 caracteres">1-Validação dos Dados da Empresa:</option>
                     <!--
                     - Dados da empresa recebidos:
                     - Nome da empresa: "{nome_da_empresa}"
@@ -104,7 +104,7 @@
                     - Email da empresa: "{email}"
                     - Endereço completo: "{endereco_da_empresa}"
                     -->
-                    <option value="Vamos analisar a situação financeira da empresa e fornecer indicadores relevantes para a tomada de decisão, de modo que explique utilizando no máximo 1000 caracteres">Análise Financeira:</option>                                                   
+                    <option value="Vamos analisar a situação financeira da empresa e fornecer indicadores relevantes para a tomada de decisão, de modo que explique utilizando no máximo 1000 caracteres">2-Análise Financeira:</option>                                                   
                     <!--
                     - Dados financeiros da empresa recebidos:
                     - Faturamento anual: "{faturamento_anual_da_empresa}"
@@ -112,7 +112,7 @@
                     - Principais meses de MENOR faturamento: "{menores_meses_faturamento}"  --------
                     - Percentual de vendas pela internet: "{percentual_vendas_pela_internet}"
                     -->                    
-                  <option value="Vamos analisar a presença digital da empresa e fornecer indicadores para otimização da estratégia digital, de modo que explique utilizando no máximo 1000 caracteres">Presença Digital e Marketing:</option>                                            
+                  <option value="Vamos analisar a presença digital da empresa e fornecer indicadores para otimização da estratégia digital, de modo que explique utilizando no máximo 1000 caracteres">3-Presença Digital e Marketing:</option>                                            
                     <!--
                     - Principais ferramentas e redes sociais utilizadas: "{ferramentas_e_redes_sociais}"  ----------
                     - Nível de maturidade em plataformas digitais: "{maturidade_empresa_uso_plataformas}"
@@ -120,17 +120,17 @@
                     - Utilização de site próprio: "{possui_site_proprio}"
                     - Terceirização de serviços de marketing digital: "{terceiriza_servicos_digital}"
                     --> 
-                    <option value="Vamos entender os principais desafios enfrentados e propor soluções para melhorar a eficiência digital, de modo que explique utilizando no máximo 1000 caracteres">Desafios e Dificuldades:</option>
+                    <option value="Vamos entender os principais desafios enfrentados e propor soluções para melhorar a eficiência digital, de modo que explique utilizando no máximo 1000 caracteres">4-Desafios e Dificuldades:</option>
                     <!--
                     - Principal desafio para utilizar plataformas de mídias digitais e ferramentas de gestão: "{principal_desafio_digitais}"
                     -->
-                    <option value="Resumo descritivo sintetizando em cada campo com de limite de output de 1000 caracteres">Resumo descritivo sintetizando cada campo:</option>
-                    <option value="Faça um resumo das palavras chaves mencionada em cada input, de modo que explique utilizando no máximo 1000 caracteres.">Resumo das palavras chaves mencionada em cada campo:</option>                    
-                    <option value="Principais estratégia que o usuário pode desenvolver com base as informações mencionada, com limite de output de 1000 caracteres:">Principais estratégia que o usuário pode desenvolver com base nas informações mencionada:</option>
-                    <option value="Priorizar os desafios que precisará atacar primeiro com base nas informações mencionada, com limite de output de 1000 caracteres:">Priorizar os desafios que precisará atacar primeiro com base nas informações mencionada:</option>
-                    <option value="Como ajudar as empresas a alcançar seus objetivos conforme o que foi digitado em cada input,de modo que explique utilizando no máximo 1000 caracteres.">Como ajudar as empresas a alcançar seus objetivos conforme ao que foi mencionada em cada campo:</option>
-                    <option value="Faça um resumo, incluindo problema, objetivo e ação, em três linha de sugestões de ações baseadas no que foi dito em cada input,de modo que explique utilizando no máximo 1000 caracteres">Resumo, incluindo problema, objetivo e ação, em três linha de sugestões:</option>
-                    <option value="Realize uma Estratégias para cada desafio de marketing 'Output: formate o resultado em Tabela': a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar. Com limite de output de 500 caracteres.">Realize uma Estratégias para cada desafio de marketing (Em formato de Tabela): a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar</option>
+                    <option value="Resumo descritivo sintetizando em cada campo com de limite de output de 1000 caracteres">5-Resumo descritivo sintetizando cada campo:</option>
+                    <option value="Faça um resumo das palavras chaves mencionada em cada input, de modo que explique utilizando no máximo 1000 caracteres.">6-Resumo das palavras chaves mencionada em cada campo:</option>                    
+                    <option value="Principais estratégia que o usuário pode desenvolver com base as informações mencionada, com limite de output de 1000 caracteres:">7-Principais estratégia que o usuário pode desenvolver com base nas informações mencionada:</option>
+                    <option value="Priorizar os desafios que precisará atacar primeiro com base nas informações mencionada, com limite de output de 1000 caracteres:">8-Priorizar os desafios que precisará atacar primeiro com base nas informações mencionada:</option>
+                    <option value="Como ajudar as empresas a alcançar seus objetivos conforme o que foi digitado em cada input,de modo que explique utilizando no máximo 1000 caracteres.">9-Como ajudar as empresas a alcançar seus objetivos conforme ao que foi mencionada em cada campo:</option>
+                    <option value="Faça um resumo, incluindo problema, objetivo e ação, em três linha de sugestões de ações baseadas no que foi dito em cada input,de modo que explique utilizando no máximo 1000 caracteres">10-Resumo, incluindo problema, objetivo e ação, em três linha de sugestões:</option>
+                    <option value="Realize uma Estratégias para cada desafio de marketing 'Output: formate o resultado em Tabela': a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar. Com limite de output de 500 caracteres.">11-Realize uma Estratégias para cada desafio de marketing (Em formato de Tabela): a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar</option>
                   </select>
                 </div>
 
