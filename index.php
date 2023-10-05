@@ -168,6 +168,11 @@
         const btn_enviar = document.querySelector('#btn_enviar');
         
         btn_enviar.addEventListener('click', function () {
+          NomeDaEmpresa.value
+          if(NomeDaEmpresa.value == "" || NomeDaEmpresa.value == null){
+            alert('Selecioine a empresa')
+            return;
+          }
           enviar_dados(
             NomeDaEmpresa.value,  //-------------->2 
             id.value, 
