@@ -131,6 +131,7 @@
                     <option value="Como ajudar as empresas a alcançar seus objetivos conforme o que foi digitado em cada input,de modo que explique utilizando no máximo 1000 caracteres.">9-Como ajudar as empresas a alcançar seus objetivos conforme ao que foi mencionada em cada campo:</option>
                     <option value="Faça um resumo, incluindo problema, objetivo e ação, em três linha de sugestões de ações baseadas no que foi dito em cada input,de modo que explique utilizando no máximo 1000 caracteres">10-Resumo, incluindo problema, objetivo e ação, em três linha de sugestões:</option>
                     <option value="Realize uma Estratégias para cada desafio de marketing 'Output: formate o resultado em Tabela': a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar. Com limite de output de 500 caracteres.">11-Realize uma Estratégias para cada desafio de marketing (Em formato de Tabela): a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar</option>
+                    <option value="você vai responder toda mensagem que eu te enviar, com um resumo estruturado da minha mensagem, organizado em tópicos para facilitar a leitura. Por fim, faça um resumo de como ajudar as empresas a alcançar seus objetivos limitando com 500 caracteres.">12-Resumo estruturado organizado por tópico</option>
                   </select>
                 </div>
 
