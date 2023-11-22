@@ -6,7 +6,6 @@
     <title>Analytics com IA</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     
-    
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -34,6 +33,14 @@
             font-weight: bold;
         }
     </style>
+    <style>
+      .hidden {
+      display: none;
+    }
+    .green-text {
+      color: green;
+    }
+  </style>
   </head>
   <body >  <!--style="background-color: #F2F2F2" -->
   <div class="container m-12 p-5 ">
@@ -48,53 +55,68 @@
               <br />
               <br />
               <div>
-<!--Inicio das perguntas AMBIENTE--------------------------->
+
+              <!--RADIO---------->
               <div class="form-group mb-3 row">
-                <div class="my-3 col">
-                
-                        <label class="form-label" for="id" style="color: green"
-                          >Selecione a Empresa:</label
-                        >    
-                        <select
-                          class="form-select"
-                          name="id"
-                          id="id"
-                        >
-                        <!--  <option value="resposta.dados[i]['email']" style="font-weight: bold;">Selecione a Empresa</option>    -->                                         
-                        <option value="" style="font-weight: bold;">Selecione a Empresa</option>
-                        </select>
-                        <span id="msgAlertaID"></span>
-<!-- SEGUNDO CAMPO DO FORMULÁRIO
-                        <label
-                          class="form-label"
-                          for="form_empresa"
-                          style="color: green"
-                          >Nome da Empresa:</label
-                        >
-                        <input
-                          class="form-control"
-                          type="text"
-                          name="form_empresa"
-                          id="form_empresa"
-                          maxlength="100"
-                        /> --->
-                        <input type="hidden" name="NomeDaEmpresa" id="NomeDaEmpresa" />
+                  <div class="my-3 col">
+                  <label class="form-label" for="id" style="color: green">Selecione o lote:</label>
+                  <br>
+                    <label for="PriLote" class="green-text">
+                      <input type="radio" name="lote" id="PriLote" value="1"> Turma '1'
+                    </label>
+                    <br>
+                    <label for="SegLote" class="green-text">
+                      <input type="radio" name="lote" id="SegLote" value="2"> Turma '2'
+                    </label>
                   </div>
                 </div>
-<!--PROMPT------------------------------------------------------------------>
-                <div class="my-3 col">
+<!--Inicio das perguntas AMBIENTE--------------------------->
+                <div class="form-group mb-3 row">
+                    <label class="form-label" for="id" style="color: green"
+                      >Selecione a Empresa:</label
+                    >    
+                    <select
+                      class="form-select"
+                      name="id"
+                      id="id"
+                    >
+                    <option value="" style="font-weight: bold;">Selecione a Empresa</option>
+                    </select>
+                    <span id="msgAlertaID"></span>
+                    <input type="hidden" name="NomeDaEmpresa" id="NomeDaEmpresa" />
+                 </div>  
+<!--RADIO---------->
+                <div class="form-group mb-3 row">
+                  <div class="my-3 col">
+                    <label for="opcaoInput" class="green-text">
+                      <input type="radio" name="opcao" id="opcaoInput" onclick="mostrarInput()"> Exibir campo de pergunta
+                    </label>
+                    <br>
+                    <label for="opcaoSelect" class="green-text">
+                      <input type="radio" name="opcao" id="opcaoSelect" onclick="mostrarSelect()"> Exibir campo lista de opções
+                    </label>
+                  </div>
+                </div>
+                <!--PERGUNTA---------->
+                  <div id="campoInput" class="hidden">
+                    <label  class="form-label" for="campo_pergunta" style="color: green">Pergunta:</label>
+                    <input class="form-control" name="campo_pergunta" type="text" id="campo_pergunta"  maxlength="100">  
+                  </div>
+<!--PROMPT---------------------------------------------------------------->
+                <div id="campoSelect" class="hidden my-3 col" >
                   <label
+
                     class="form-label"
                     for="prompt"
-                    style="color: green; font-weight: bold;"
-                    >Prompt:</label
+                    style="color: green;"
+                    >Lista de Opções:</label
                   >
                   <select
                     class="form-select"
                     name="prompt"
                     id="prompt"
                   >
-                    <option value="" style="font-weight: bold;">Escolha uma das opção abaixo:</option>
+                    <option value="" style="font-weight: bold;">Clique aqui e escolha uma das opções:</option>
                     <option value="Vamos analisar a validade dos dados fornecidos e verificar se estão consistentes, com de limite de output de 1000 caracteres">1-Validação dos Dados da Empresa:</option>
                     <!--
                     - Dados da empresa recebidos:
@@ -124,14 +146,14 @@
                     <!--
                     - Principal desafio para utilizar plataformas de mídias digitais e ferramentas de gestão: "{principal_desafio_digitais}"
                     -->
-                    <option value="Resumo descritivo sintetizando em cada campo com de limite de output de 1000 caracteres">5-Resumo descritivo sintetizando cada campo:</option>
+                    <option value="Resuma de forma descritivo, sintetizando em cada campo com de limite de output de 1000 caracteres">5-Resumo descritivo sintetizando cada campo:</option>
                     <option value="Faça um resumo das palavras chaves mencionada em cada input, de modo que explique utilizando no máximo 1000 caracteres.">6-Resumo das palavras chaves mencionada em cada campo:</option>                    
-                    <option value="Principais estratégia que o usuário pode desenvolver com base as informações mencionada, com limite de output de 1000 caracteres:">7-Principais estratégia que o usuário pode desenvolver com base nas informações mencionada:</option>
+                    <option value="Quais as principais estratégia que o usuário pode desenvolver com base as informações mencionada, com limite de output de 1000 caracteres:">7-Principais estratégia que o usuário pode desenvolver com base nas informações mencionada:</option>
                     <option value="Priorizar os desafios que precisará atacar primeiro com base nas informações mencionada, com limite de output de 1000 caracteres:">8-Priorizar os desafios que precisará atacar primeiro com base nas informações mencionada:</option>
                     <option value="Como ajudar as empresas a alcançar seus objetivos conforme o que foi digitado em cada input,de modo que explique utilizando no máximo 1000 caracteres.">9-Como ajudar as empresas a alcançar seus objetivos conforme ao que foi mencionada em cada campo:</option>
                     <option value="Faça um resumo, incluindo problema, objetivo e ação, em três linha de sugestões de ações baseadas no que foi dito em cada input,de modo que explique utilizando no máximo 1000 caracteres">10-Resumo, incluindo problema, objetivo e ação, em três linha de sugestões:</option>
-                    <option value="Realize uma Estratégias para cada desafio de marketing 'Output: formate o resultado em Tabela': a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar. Com limite de output de 500 caracteres.">11-Realize uma Estratégias para cada desafio de marketing (Em formato de Tabela): a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar</option>
-                    <option value="você vai responder toda mensagem que eu te enviar, com um resumo estruturado da minha mensagem, organizado em tópicos para facilitar a leitura. Por fim, faça um resumo de como ajudar as empresas a alcançar seus objetivos limitando com 500 caracteres.">12-Resumo estruturado organizado por tópico</option>
+                    <option value="Realize uma estratégias para cada desafio de marketing 'Output: formate o resultado em Tabela': a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar. Com limite de output de 500 caracteres.">11-Realize uma Estratégias para cada desafio de marketing (Em formato de Tabela): a)Atrair cliente; b)Estimular interesse;C)Levar a venda/transação; d)Fidelizar</option>
+                    <option value="Responda toda as mensagem que foram enviadas, com um resumo estruturado da minha mensagem, organizado em tópicos para facilitar a leitura. Por fim, faça um resumo com limite de 500 caracteres de como ajudar as empresas a alcançar seus objetivos.">12-Resumo estruturado organizado por tópico</option>
                   </select>
                 </div>
 
@@ -160,22 +182,33 @@
       </div>
     </div>
     <script>
+         function mostrarInput() {
+           document.getElementById('campoInput').classList.remove('hidden');
+           document.getElementById('campoSelect').classList.add('hidden');
+           document.getElementById('prompt').value = "";
+           document.getElementById('campo_pergunta').value = "";
+         }
+
+         function mostrarSelect() {
+          document.getElementById('campoInput').classList.add('hidden');
+           document.getElementById('campoSelect').classList.remove('hidden');
+           document.getElementById('prompt').value = "";
+           document.getElementById('campo_pergunta').value = "";
+         }
+
       window.addEventListener('load', function () {
-        const form_empresa = document.querySelector('#NomeDaEmpresa'); //-------------->1 
+        const form_empresa = document.querySelector('#NomeDaEmpresa'); //-------------->1
         const id = document.querySelector('#id');
         const prompt = document.querySelector('#prompt'); 
+        const campo_pergunta = document.querySelector('#campo_pergunta');
         const resultado = document.querySelector('#resultado');
         const btn_enviar = document.querySelector('#btn_enviar');
-        
+
         btn_enviar.addEventListener('click', function () {
-          NomeDaEmpresa.value
-          if(NomeDaEmpresa.value == "" || NomeDaEmpresa.value == null){
-            alert('Selecioine a empresa')
-            return;
-          }
           enviar_dados(
             NomeDaEmpresa.value,  //-------------->2 
             id.value, 
+            campo_pergunta.value,
             prompt.value
           );
           btn_enviar.setAttribute('disabled', 'true');
@@ -184,6 +217,7 @@
         async function enviar_dados(
           NomeDaEmpresa, //-------------->3 
           id,
+          campo_pergunta,
           prompt
         ) {
           window.setTimeout(function () {
@@ -192,6 +226,7 @@
           var formdata = new FormData();
           formdata.append("NomeDaEmpresa", NomeDaEmpresa); //-------------->4
           formdata.append("id", id);
+          formdata.append("campo_pergunta", campo_pergunta);
           formdata.append("prompt", prompt);
           var requestOptions = {
               method: 'POST',
